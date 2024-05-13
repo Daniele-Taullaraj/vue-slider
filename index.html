@@ -17,7 +17,7 @@
         <div class="container">
             <div class="slider-wrapper" tabindex="0">
 
-                <div class="item " :class="fistActive(i)" v-for="elemento,i in slides">
+                <div class="item " :class="fistActiveItem(i)" v-for="elemento,i in slides">
                     <img :src="elemento.image" :alt="elemento.title" />
                     <div class="text">
                         <h3>{{slides[i].title}}</h3>
@@ -29,9 +29,9 @@
 
 
                 <div class="thumbs">
-                    <div class="prev"></div>
-                    <div class="next"></div>
-                    <div class="thumb" :class="fistActive(i)" v-for="elemento,i in slides">
+                    <div @click="prev" class="prev"></div>
+                    <div @click="next" class="next"></div>
+                    <div class="thumb" :class="fistActiveThumbs(i)" v-for="elemento,i in slides">
                         <img :src="elemento.image" :alt="elemento.title" />
                     </div>
                 </div>
