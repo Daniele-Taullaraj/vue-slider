@@ -29,6 +29,7 @@ createApp({
                 }
             ],
             slideAttiva: "0",
+            timer: null,
         }
     },
     methods: {
@@ -55,6 +56,7 @@ createApp({
             } else {
                 this.slideAttiva += 1;
             }
+            clearInterval(this.timer);
         },
         prev() {
             if (this.slideAttiva < 1) {
@@ -62,6 +64,31 @@ createApp({
             } else {
                 this.slideAttiva -= 1;
             }
-        }
+        },
+        cliccato(indice) {
+            this.slideAttiva = indice;
+        },
+        pausaAutoplay(indice) {
+            clearInterval(this.timer);
+            this.slideAttiva = indice;
+        },
+        riprendiAutoplay() {
+            this.timer = setInterval(() => {
+                if (this.slideAttiva > 3) {
+                    this.slideAttiva = 0;
+                } else {
+                    this.slideAttiva += 1;
+                }
+            }, 1000)
+        },
+    },
+    mounted() {
+        this.timer = setInterval(() => {
+            if (this.slideAttiva > 3) {
+                this.slideAttiva = 0;
+            } else {
+                this.slideAttiva += 1;
+            }
+        }, 1000)
     }
 }).mount('#app')

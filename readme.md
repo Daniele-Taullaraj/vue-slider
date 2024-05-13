@@ -8,3 +8,10 @@ M2
 
 M3
 -aggiunti event handler per le frecce di navigazione,creando delle funzioni apposite che utlizzano la variabile che ogni volta si salva l'immaggine attiva come riferimento
+
+BONUS
+-aggiunta funzione per il click sulla thumb,passando l'indice come argomento della funzione che verrà assegnato come valore alla variabile slideActive
+
+-aggiunto timer all'avvio 
+
+-con @mouseenter e @mouseleave gestisco il timer con l'hover delle thumb

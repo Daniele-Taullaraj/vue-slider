@@ -32,7 +32,8 @@
                     <div @click="prev" class="prev"></div>
                     <div @click="next" class="next"></div>
                     <div class="thumb" :class="fistActiveThumbs(i)" v-for="elemento,i in slides">
-                        <img :src="elemento.image" :alt="elemento.title" />
+                        <img @click="cliccato(i)" @mouseenter="pausaAutoplay(i)" @mouseleave="riprendiAutoplay()"
+                            :src="elemento.image" :alt="elemento.title" />
                     </div>
                 </div>
 
