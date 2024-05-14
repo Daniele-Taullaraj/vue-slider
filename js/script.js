@@ -36,27 +36,25 @@ createApp({
         fistActiveItem(indice) {
             if (indice == this.slideAttiva) {
                 this.slideAttiva = indice;
-                return "active-item";
+                return "item active-item";
             } else {
-                return "";
+                return "item";
             }
         },
         fistActiveThumbs(indice) {
             if (indice == this.slideAttiva) {
                 this.slideAttiva = indice;
-                return "active";
+                return "thumb active";
             } else {
-                return "";
+                return "thumb";
             }
         },
         next() {
             if (this.slideAttiva > 3) {
                 this.slideAttiva = 0;
-
             } else {
                 this.slideAttiva += 1;
             }
-            clearInterval(this.timer);
         },
         prev() {
             if (this.slideAttiva < 1) {
@@ -83,12 +81,12 @@ createApp({
         },
     },
     mounted() {
-        this.timer = setInterval(() => {
-            if (this.slideAttiva > 3) {
-                this.slideAttiva = 0;
-            } else {
-                this.slideAttiva += 1;
-            }
-        }, 1000)
+        // this.timer = setInterval(() => {
+        //     if (this.slideAttiva > 3) {
+        //         this.slideAttiva = 0;
+        //     } else {
+        //         this.slideAttiva += 1;
+        //     }
+        // }, 1000)
     }
 }).mount('#app')
